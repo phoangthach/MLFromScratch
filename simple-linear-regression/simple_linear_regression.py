@@ -29,7 +29,7 @@ def coefficients(dataset):
     mean_x, mean_y = mean(x), mean(y)
     b1 = covariance(x, mean_x, y, mean_y) / variance(x, mean_x)
     b0 = mean_y - b1 * mean(x)
-    return b0, b1     
+    return b0, b1
 
 
 # Define prediction
@@ -50,7 +50,7 @@ def rmse_metric(actual, predicted):
 def train_test_split(dataset, split):
     train = np.empty((0, 2), float)
     train_size = split * len(dataset)
-    
+
     dataset_copy = dataset.copy()
     while len(train) < train_size:
         index = randrange(len(dataset_copy))
@@ -63,7 +63,7 @@ def train_test_split(dataset, split):
 def evaluate_algorithm(dataset, algorithm, split):
     # make test data from dataset
     train, test = train_test_split(dataset, split)
-    
+
     test_set = test.copy()
     test_set = test_set[:, 0]
     predicted = algorithm(train, test_set)

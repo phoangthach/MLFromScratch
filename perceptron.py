@@ -43,11 +43,11 @@ def predict(x):
     return (x > 0.5).astype(int)
 
 # the number of epoch larger the accuracy higher
-for epoch in range(10000): 
+for epoch in range(10000):
     inputs = input_features
 
     # feedforward input
-    z = np.dot(inputs, weights)    
+    z = np.dot(inputs, weights)
 
     # feedforward ouput
     a = sigmoid(z)
@@ -59,7 +59,7 @@ for epoch in range(10000):
     # updating weights
     inputs = input_features.T
     weights -= lr * np.dot(inputs, error)
-    
+
 print('optimal weights: \n', weights)
 
 # prediction
