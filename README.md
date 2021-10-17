@@ -1,1 +1,1 @@
-# MLFromScratch
+# Machine Learning From Scratch
